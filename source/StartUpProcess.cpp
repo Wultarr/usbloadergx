@@ -63,7 +63,7 @@ StartUpProcess::StartUpProcess()
 #endif
 
 	if (strncmp(Settings.ConfigPath, "sd", 2) == 0)
-		cancelTxt = new GuiText("Press B to cancel or A to enable SD card mode", 22, (GXColor){255, 255, 255, 255});
+		cancelTxt = new GuiText("", 22, (GXColor){255, 255, 255, 255});
 	else
 		cancelTxt = new GuiText("Press B to cancel", 22, (GXColor){255, 255, 255, 255});
 	cancelTxt->SetAlignment(ALIGN_CENTER, ALIGN_MIDDLE);
@@ -245,7 +245,7 @@ bool StartUpProcess::USBSpinUp()
 			break;
 		}
 
-		messageTxt->SetTextf("No HDD detected. Switching to SD Mode", 1 - (int)countDown.elapsed());
+		messageTxt->SetTextf("No HDD detected. Switching to SD Mode");
 		Draw();
 		usleep(50000);
 	} while (countDown.elapsed() < 1.f);
