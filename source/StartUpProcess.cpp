@@ -236,14 +236,12 @@ bool StartUpProcess::USBSpinUp()
 		}
 
 		if (cancelBtn->GetState() == STATE_CLICKED)
-			break;
-
-		if (sdmodeBtn->GetState() == STATE_CLICKED)
 		{
-			Settings.SDMode = ON;
-			sdhc_mode_sd = 1;
 			break;
 		}
+				
+		Settings.SDMode = ON;
+		sdhc_mode_sd = 1;
 
 		messageTxt->SetTextf("No HDD detected. Switching to SD Mode");
 		Draw();
