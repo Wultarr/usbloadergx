@@ -245,10 +245,10 @@ bool StartUpProcess::USBSpinUp()
 			break;
 		}
 
-		messageTxt->SetTextf("Waiting for HDD: %i sec left\n", 20 - (int)countDown.elapsed());
+		messageTxt->SetTextf("No HDD detected. Switching to SD Mode", 1 - (int)countDown.elapsed());
 		Draw();
 		usleep(50000);
-	} while (countDown.elapsed() < 20.f);
+	} while (countDown.elapsed() < 1.f);
 
 	drawCancel = false;
 
